@@ -1,2 +1,2 @@
 
- https://yalatan.github.io/
+https://yalatan.github.io/
