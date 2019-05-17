@@ -12,11 +12,15 @@ body {
     color: #484a4b;
 }
 
-h1, h2, h3, .profile-subtitle {
+h1,
+h2,
+h3,
+.profile-subtitle {
     font-family: 'Oswald', Tahoma, sans-serif;
 }
 
-.profile, .box {
+.profile,
+.box {
     flex-basis: 338px;
     box-sizing: border-box;
     margin: 1px;
@@ -37,7 +41,8 @@ header {
 .profile-image {
     height: 200px;
     width: 200px;
-    background: url(./assets/img/ProfileFoto.jpg) 50% 50%;
+    /*background: url(./assets/img/ProfileFoto.jpg) 50% 50%;*/
+    /*вставить фото*/
     border-radius: 100%;
     border: 3px solid #fff;
     margin: 0;
@@ -76,10 +81,9 @@ header {
 h2 {
     margin: 9px;
     text-transform: uppercase;
-    /* color: #1a9cb0; */
 }
 
-h3{
+h3 {
     font-size: 1em;
 }
 
@@ -102,8 +106,13 @@ h3{
     color: #1a9cb0;
 }
 
-.box-content a:hover, .social a:hover {
+.box-content a:hover,
+.social a:hover {
     color: #09c7e5;
+}
+
+.last {
+    flex-grow: 1;
 }
 
 .ul-skils {
@@ -123,30 +132,32 @@ h3{
     color: #fff;
 }
 
-.educ-work-place p{
+.educ-work-place p {
     padding: 0;
     margin-bottom: 2px;
 }
 
-.educ-work-place__place-name{
+.educ-work-place__place-name {
     font-weight: 900;
 }
 
-.educ-work-place__year, .educ-work-place__department{
+.educ-work-place__year,
+.educ-work-place__department {
     font-style: italic;
     margin-top: 0;
 }
 
-.educ-work-place__profecion{
+.educ-work-place__profecion {
     margin-top: 0;
     border-bottom: 1px solid #e3e4e5;
 }
 
-.summary, .language{
+.summary,
+.language {
     line-height: 25px;
 }
 
 .code-exampel {
-    order: 1;
-    flex-grow: 1;
+    /*order: 1;*/
+
 }
