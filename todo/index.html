@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div class="container d-flex align-items-start justify-content-center">
+
+        <aside class="aside" ng-show="showaside">
+            <div class="logo_block d-flex align-items-center">
+                <img src="images/logo.png" alt="ToDo">
+                <h1 class="aside_head h1">ToDo</h1>
+            </div>
+
+            <ul class="aside_content">
+                <li class="item active d-flex align-items-center">
+                    <div class="blue_block"></div>
+                    <a href=""> <i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                </li>
+                <li class="item d-flex align-items-center">
+                    <div class="blue_block"></div>
+                    <a href=""> <i class="fa fa-cog" aria-hidden="true"></i>Settings</a>
+                </li>
+            </ul>
+        </aside>
+        <div class="wrap">
+            <header class="header d-flex align-items-center justify-content-center">
+                <nav class="navigation  d-flex align-items-center justify-content-between">
+
+                    <div class="navigation_aside"><i class="fa fa-caret-left arrow_left" aria-hidden="true" ng-show="showaside"></i><i class="fa fa-bars menu" aria-hidden="true" ng-click="showaside = !showaside"></i></div>
+                    <div class="navigation_page">
+                        <div class="sort d-flex align-items-center">
+                            <div class="sort_priority">
+                                <i class="fa fa-long-arrow-down sortorder" aria-hidden="true" ng-show="propertyName === 'time'" ng-class="{reverse: reverse}"></i>
+                                <i class="fa fa-clock-o" aria-hidden="true" ng-click="sortBy('time')"></i>
+                            </div>
+
+
+                            <div class="filter d-flex align-items-center justify-content-center">
+                                <div class="choose" ng-show="qwerty">
+                                    <p ng-click="filterprop = 'hight'"> hight</p>
+                                    <p ng-click="filterprop = 'medium'">medium</p>
+                                    <p ng-click="filterprop = 'low'">low</p>
+                                </div>
+                                <i class="fa fa-wifi" aria-hidden="true" ng-click="filterprop =''; qwerty = !qwerty"></i>
+
+
+                            </div>
+
+                        </div>
+                        <div class="add_note   d-flex align-items-center justify-content-center" ng-click="createNewToDo()"><button type="button" class=" d-flex align-items-center justify-content-center">+ Add ToDo</button></div>
+                        <div class="user  d-flex align-items-center">
+                            <div class="user_foto  d-flex align-items-center justify-content-center"> <img src="images/user.jpg" alt=""></div>
+
+                            <i class="fa fa-caret-down arrow_down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                </nav>
+            </header>
+            <main class="main d-flex align-items-center justify-content-center">
+                <div class="wrapper">
+                    <div class="viewer"> <i class="fa fa-th" aria-hidden="true"></i>
+                        <i class="fa fa-th-list" aria-hidden="true"></i></div>
+
+                    <section class=" section">
+
+                        <h3 class="section_head h3"> ToDo <span class="grey_text">({{listNotesToDo.length}})</span></h3>
+                        <div class="wrap_section">
+                            <div class="note" ng-repeat="item in listNotesToDo | filter:filterprop | orderBy:propertyName:reverse track by $index">
+                                <!--  -->
+                                <div class="note_order d-flex align-items-center justify-content-center">
+                                    <p class="rounded-circle d-flex align-items-center justify-content-center" style="background-color: {{item.order.color}}">{{item.order.letter}}</p>
+                                </div>
+                                <div class="note_text">
+                                    <h4>{{item.text.head}}</h4>
+                                    <p text-muted>{{item.text.content}}</p>
+                                </div>
+                                <div class="note_settings d-flex align-items-center justify-content-center text-muted"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+
+                                    <div class="settings">
+                                        <p ng-click="edit($index)" data-tooltip="Edit"><i class="fa fa-pencil" aria-hidden="true"></i> </p>
+                                        <p ng-click="delete($index)" data-tooltip="Delete"><i class="fa fa-trash" aria-hidden="true"></i></p>
+                                        <p ng-click="complite($index)" data-tooltip="Completed"><i class="fa fa-check-circle-o" aria-hidden="true"></i></p>
+                                    </div>
+                                </div>
+                                <div class="status todo d-flex align-items-center justify-content-center">
+                                    <p class="priority"> {{item.priority}} Priority</p>
+                                    <i class="fa fa-clock-o grey_text" aria-hidden="true"></i>
+                                    <p class="grey_text"> {{item.time}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class=" section">
+                        <h3 class="section_head h3">Completed <span class="grey_text">({{listNotesCompleted.length}})</span></h3>
+                        <div class="wrap_section">
+                            <div class="note" ng-repeat="item in listNotesCompleted  track by $index">
+                                <div class="note_order d-flex align-items-center justify-content-center">
+                                    <p class="rounded-circle d-flex align-items-center justify-content-center" style="background-color: {{item.order.color}}">{{item.order.letter}}</p>
+                                </div>
+                                <div class="note_text">
+                                    <h4>{{item.text.head}}</h4>
+                                    <p text-muted>{{item.text.content}}</p>
+                                </div>
+                                <div class="note_settings d-flex align-items-center justify-content-center text-muted"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                    <div class="settings">
+                                        <p ng-click="deletefromConpleted($index)"><i class="fa fa-trash" aria-hidden="true"></i></p>
+                                    </div>
+                                </div>
+                                <div class="status completed d-flex align-items-center justify-content-center"><i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                    <p> Completed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+
+            </main>
+
+        </div>
+
+        <section class="add_todo check-element animate-show-hide" ng-show="openaddTodo">
+            <div class="wrapper  ">
+
+                <p>Title</p><input type="text" name="title" id="title" required ng-model="title">
+
+
+                <p>Content</p><textarea type="text" name="content" id="content" ng-model="content"></textarea>
+
+
+                <p>Priority</p><label><input type="radio" name="priority"  value="low" ng-model="radiocheck.type">Low</label>
+
+                <label><input type="radio" name="priority"  value="medium"  ng-model="radiocheck.type">Medium</label>
+
+                <label><input type="radio" name="priority"  value="hight"  ng-model="radiocheck.type">Hight</label>
+
+                <div class="add_note d-flex align-items-center justify-content-center" ng-click="saveNote(radiocheck.type)"><button type="button" class=" d-flex align-items-center justify-content-center"> Add </button></div>
+                <div class="close" ng-click="close()">&#10008;</div>
+            </div>
+
+        </section>
+        <section class="add_todo check-element animate-show-hide" ng-show="editNote">
+            <div class="wrapper " ng-repeat="note in choosenNote track by $index">
+
+                <p>Title</p><input type="text" name="title" id="title" ng-model="note.text.head">
+
+
+                <p>Content</p><textarea type="text" name="content" id="content" ng-model="note.text.content"></textarea>
+
+
+
+                <p>Priority</p><label><input type="radio" name="priority"  value="low" ng-model="radiocheck.type">Low</label>
+
+                <label><input type="radio" name="priority"  value="medium"  ng-model="radiocheck.type">Medium</label>
+
+                <label><input type="radio" name="priority"  value="hight"  ng-model="radiocheck.type">Hight</label>
+
+                <div class="add_note  d-flex align-items-center justify-content-center" ng-click="saveEditNote(radiocheck.type, $index)"><button type="button" class=" d-flex align-items-center justify-content-center"> Edit </button></div>
+                <div class="close" ng-click="closeEdit()">&#10008;</div>
+            </div>
+
+        </section>
+
+
+    </div>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
