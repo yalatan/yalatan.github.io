@@ -1,6 +1,7 @@
 body {
     margin: 15px;
     background-color: #f0f0ee;
+    font-weight: lighter;
 }
 
 .page {
@@ -9,7 +10,7 @@ body {
     justify-content: space-around;
     max-width: 1024px;
     margin: 0 auto;
-    color: #484a4b;
+    color: rgb(29, 65, 89);
 }
 
 h1,
@@ -49,7 +50,7 @@ header {
 }
 
 .profile-name {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #1a9cb0;
     padding-bottom: 10px;
     border-bottom: 1px solid #e3e4e5;
@@ -60,12 +61,11 @@ header {
     margin-top: 5px;
     color: #a1a5a6;
     font-weight: 500;
-    font-size: 0.8em;
-    letter-spacing: 5px;
+    font-size: 1em;
 }
 
 .box {
-    border: 1px solid #e3e4e5;
+    border: 1px solid rgba(227, 228, 229, 0.3);
     border-radius: 5px;
     padding: 0 15px;
     background-color: #fff;
@@ -90,29 +90,39 @@ h3 {
 .contacts .box-content {
     padding-left: 20px;
 }
-
-.box-content p i {
-    font-size: 1.5em;
-    margin-right: 20px;
+.box-content .icon-content {
+display: flex;
+align-items: center;
 }
+
 
 .social {
     display: flex;
     justify-content: center;
 }
 
-.box-content a {
+a {
     text-decoration: none;
-    color: #1a9cb0;
+    /* color: #1a9cb0; */
+}
+ i {
+    font-size: 1.5em;
+    margin-right: 20px;
+    text-decoration: none;
+    color: rgb(158, 137, 120);
 }
 
 .box-content a:hover,
-.social a:hover {
-    color: #09c7e5;
+.social a:hover,
+.box-content .icon:hover,
+.social .icon:hover 
+{
+    color: rgb(110, 110, 110);
 }
 
 .last {
     flex-grow: 1;
+    order: 3;
 }
 
 .ul-skils {
@@ -131,33 +141,69 @@ h3 {
     background-color: #1a9cb0;
     color: #fff;
 }
-
-.educ-work-place p {
-    padding: 0;
-    margin-bottom: 2px;
+.educ-work-place h3{
+    color: rgba(158, 137, 120, 1);
+}
+.educ-work-place:not(:last-child){
+   border-bottom: 1px solid rgba(158, 137, 120, 0.5);
+}
+.educ-work-place .icon-content{
+    justify-content: space-around;
+}
+.circle {
+    border: 1px solid red;
+    border-radius: 100%;
+    width: 1em;
+    height: 1em;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.skills-item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    margin: 5px 0;
+}
+.gradation{
+    display: flex;
 }
 
-.educ-work-place__place-name {
-    font-weight: 900;
+.blue{
+    background-color: rgb(29, 65, 89);
+    border: 1px solid rgb(29, 65, 89);
 }
-
-.educ-work-place__year,
-.educ-work-place__department {
-    font-style: italic;
-    margin-top: 0;
+.brown{
+    background-color: rgb(158, 137, 120);
+    border: 1px solid rgb(158, 137, 120);
 }
-
-.educ-work-place__profecion {
-    margin-top: 0;
-    border-bottom: 1px solid #e3e4e5;
+.code-example .box-content{
+    display: flex;
+    flex-wrap: wrap;
 }
-
+.project{
+    max-height: 200px;
+    max-width: 46%;
+min-width: 246px;
+border: 1px solid rgb(158, 137, 120);
+margin: .5em;
+}
+.project img {
+    width: 100%;
+}
 .summary,
 .language {
     line-height: 25px;
 }
 
-.code-exampel {
-    /*order: 1;*/
-
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+footer a {
+    color: rgb(29, 65, 89);
+}
+footer a:hover,footer i:hover {
+    color: rgb(110, 110, 110);
 }
