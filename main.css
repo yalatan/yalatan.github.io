@@ -180,10 +180,13 @@ a {
 .code-example .box-content{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: normal;
 }
 .project{
     max-height: 200px;
-    max-width: 46%;
+    max-width: 28%;
 min-width: 246px;
 border: 1px solid rgb(158, 137, 120);
 margin: .5em;
