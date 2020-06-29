@@ -1,212 +1,211 @@
 body {
-    margin: 15px;
-    background-color: #f0f0ee;
-    font-weight: lighter;
+  margin: 15px;
+  background-color: #f0f0ee;
+  font-weight: lighter;
 }
 
 .page {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1024px;
-    margin: 0 auto;
-    color: rgb(29, 65, 89);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1024px;
+  margin: 0 auto;
+  color: rgb(29, 65, 89);
 }
 
 h1,
 h2,
 h3,
 .profile-subtitle {
-    font-family: 'Oswald', Tahoma, sans-serif;
+  font-family: "Oswald", Tahoma, sans-serif;
 }
 
 .profile,
 .box {
-    flex-basis: 338px;
-    box-sizing: border-box;
-    margin: 1px;
+  flex-basis: 338px;
+  box-sizing: border-box;
+  margin: 1px;
 }
 
 .profile {
-    text-transform: uppercase;
-    order: -1;
-    padding-top: 50px;
+  text-transform: uppercase;
+  order: -1;
+  padding-top: 50px;
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-image {
-    height: 200px;
-    width: 200px;
-    /*background: url(./assets/img/ProfileFoto.jpg) 50% 50%;*/
-    /*вставить фото*/
-    border-radius: 100%;
-    border: 3px solid #fff;
-    margin: 0;
+  height: 200px;
+  width: 200px;
+  /*background: url(./assets/img/ProfileFoto.jpg) 50% 50%;*/
+  /*вставить фото*/
+  border-radius: 100%;
+  border: 3px solid #fff;
+  margin: 0;
 }
 
 .profile-name {
-    font-size: 2em;
-    color: #1a9cb0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e3e4e5;
-    margin-bottom: 0;
+  font-size: 2em;
+  color: #1a9cb0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e3e4e5;
+  margin-bottom: 0;
 }
 
 .profile-subtitle {
-    margin-top: 5px;
-    color: #a1a5a6;
-    font-weight: 500;
-    font-size: 1em;
+  margin-top: 5px;
+  color: #a1a5a6;
+  font-weight: 500;
+  font-size: 1em;
 }
 
 .box {
-    border: 1px solid rgba(227, 228, 229, 0.3);
-    border-radius: 5px;
-    padding: 0 15px;
-    background-color: #fff;
-    margin-bottom: 6px;
-    box-shadow: 2px 2px 2px rgba(218, 218, 218, 0.7);
-    overflow: hidden;
+  border: 1px solid rgba(227, 228, 229, 0.3);
+  border-radius: 5px;
+  padding: 0 15px;
+  background-color: #fff;
+  margin-bottom: 6px;
+  box-shadow: 2px 2px 2px rgba(218, 218, 218, 0.7);
+  overflow: hidden;
 }
 
 .box-title {
-    border-bottom: 1px solid #1a9cb0;
+  border-bottom: 1px solid #1a9cb0;
 }
 
 h2 {
-    margin: 9px;
-    text-transform: uppercase;
+  margin: 9px;
+  text-transform: uppercase;
 }
 
 h3 {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 .contacts .box-content {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 .box-content .icon-content {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-
 .social {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 a {
-    text-decoration: none;
-    /* color: #1a9cb0; */
+  text-decoration: none;
+  /* color: #1a9cb0; */
 }
- i {
-    font-size: 1.5em;
-    margin-right: 20px;
-    text-decoration: none;
-    color: rgb(158, 137, 120);
+i {
+  font-size: 1.5em;
+  margin-right: 20px;
+  text-decoration: none;
+  color: rgb(158, 137, 120);
 }
 
 .box-content a:hover,
 .social a:hover,
 .box-content .icon:hover,
-.social .icon:hover 
-{
-    color: rgb(110, 110, 110);
+.social .icon:hover {
+  color: rgb(110, 110, 110);
 }
 
 .last {
-    flex-grow: 1;
-    order: 3;
+  flex-grow: 1;
+  order: 3;
 }
 
 .ul-skils {
-    list-style: none;
+  list-style: none;
 }
 
 .ul-skils li {
-    display: inline-block;
-    background-color: #f0f0ee;
-    margin-bottom: 2px;
-    padding: 5px;
-    color: #000;
+  display: inline-block;
+  background-color: #f0f0ee;
+  margin-bottom: 2px;
+  padding: 5px;
+  color: #000;
 }
 
 .ul-skils li:hover {
-    background-color: #1a9cb0;
-    color: #fff;
+  background-color: #1a9cb0;
+  color: #fff;
 }
-.educ-work-place h3{
-    color: rgba(158, 137, 120, 1);
+.educ-work-place h3 {
+  color: rgba(158, 137, 120, 1);
 }
-.educ-work-place:not(:last-child){
-   border-bottom: 1px solid rgba(158, 137, 120, 0.5);
+.educ-work-place:not(:last-child) {
+  border-bottom: 1px solid rgba(158, 137, 120, 0.5);
 }
-.educ-work-place .icon-content{
-    justify-content: space-around;
+.educ-work-place .icon-content {
+  justify-content: space-around;
 }
 .circle {
-    border: 1px solid red;
-    border-radius: 100%;
-    width: 1em;
-    height: 1em;
-    margin-left: 3px;
-    margin-right: 3px;
+  border: 1px solid red;
+  border-radius: 100%;
+  width: 1em;
+  height: 1em;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 .skills-item {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%;
-    margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  margin: 5px 0;
 }
-.gradation{
-    display: flex;
+.gradation {
+  display: flex;
 }
 
-.blue{
-    background-color: rgb(29, 65, 89);
-    border: 1px solid rgb(29, 65, 89);
+.blue {
+  background-color: rgb(29, 65, 89);
+  border: 1px solid rgb(29, 65, 89);
 }
-.brown{
-    background-color: rgb(158, 137, 120);
-    border: 1px solid rgb(158, 137, 120);
+.brown {
+  background-color: rgb(158, 137, 120);
+  border: 1px solid rgb(158, 137, 120);
 }
-.code-example .box-content{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: normal;
+.code-example .box-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: normal;
 }
-.project{
-    max-height: 200px;
-    max-width: 28%;
-min-width: 246px;
-border: 1px solid rgb(158, 137, 120);
-margin: .5em;
+.project {
+  max-height: 200px;
+  max-width: 28%;
+  min-width: 246px;
+  border: 1px solid rgb(158, 137, 120);
+  margin: 0.5em;
 }
 .project img {
-    width: 100%;
+  width: 100%;
 }
 .summary,
 .language {
-    line-height: 25px;
+  line-height: 25px;
 }
 
-footer{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 footer a {
-    color: rgb(29, 65, 89);
+  color: rgb(29, 65, 89);
 }
-footer a:hover,footer i:hover {
-    color: rgb(110, 110, 110);
+footer a:hover,
+footer i:hover {
+  color: rgb(110, 110, 110);
 }
