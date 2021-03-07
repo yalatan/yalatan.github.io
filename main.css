@@ -4,11 +4,15 @@ body {
   font-weight: lighter;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .page {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 1024px;
+  justify-content: center;
+  max-width: 1065px;
   margin: 0 auto;
   color: rgb(29, 65, 89);
 }
@@ -16,15 +20,22 @@ body {
 h1,
 h2,
 h3,
+h5,
 .profile-subtitle {
   font-family: "Oswald", Tahoma, sans-serif;
 }
 
+h5 {
+  margin-block-start: 0;
+  margin-block-end: 0.5em;
+}
+
 .profile,
 .box {
-  flex-basis: 338px;
   box-sizing: border-box;
-  margin: 1px;
+  min-width: 280px;
+  width: 32%;
+  flex-grow: 1;
 }
 
 .profile {
@@ -33,28 +44,13 @@ h3,
   padding-top: 50px;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.profile-image {
-  height: 200px;
-  width: 200px;
-  /*background: url(./assets/img/ProfileFoto.jpg) 50% 50%;*/
-  /*вставить фото*/
-  border-radius: 100%;
-  border: 3px solid #fff;
-  margin: 0;
-}
-
 .profile-name {
   font-size: 2em;
   color: #1a9cb0;
   padding-bottom: 10px;
   border-bottom: 1px solid #e3e4e5;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .profile-subtitle {
@@ -62,16 +58,25 @@ header {
   color: #a1a5a6;
   font-weight: 500;
   font-size: 1em;
+  text-align: center;
 }
 
 .box {
-  border: 1px solid rgba(227, 228, 229, 0.3);
-  border-radius: 5px;
-  padding: 0 15px;
-  background-color: #fff;
-  margin-bottom: 6px;
-  box-shadow: 2px 2px 2px rgba(218, 218, 218, 0.7);
   overflow: hidden;
+  border: 1px solid rgba(227, 228, 229, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px rgba(218, 218, 218, 0.7);
+  margin: 4px;
+}
+
+.box.profile {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .box-title {
@@ -90,20 +95,24 @@ h3 {
 .contacts .box-content {
   padding-left: 20px;
 }
+
 .box-content .icon-content {
   display: flex;
   align-items: center;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  color: rgb(29, 65, 89);
 }
 
 .social {
-  display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 a {
   text-decoration: none;
-  /* color: #1a9cb0; */
 }
+
 i {
   font-size: 1.5em;
   margin-right: 20px;
@@ -114,25 +123,38 @@ i {
 .box-content a:hover,
 .social a:hover,
 .box-content .icon:hover,
-.social .icon:hover {
+.social .icon:hover,
+.icon-content--link:hover,
+.icon-content--link:hover .icon {
   color: rgb(110, 110, 110);
+}
+
+.about {
+  flex-basis: 100%;
+}
+
+.box.about .icon-content {
+  line-height: 1.5;
 }
 
 .last {
   flex-grow: 1;
   order: 3;
+  flex-basis: 100%;
 }
 
 .ul-skils {
   list-style: none;
+  padding-left: 0;
 }
 
 .ul-skils li {
   display: inline-block;
   background-color: #f0f0ee;
-  margin-bottom: 2px;
   padding: 5px;
   color: #000;
+  margin: 5px;
+  border-radius: 4px;
 }
 
 .ul-skils li:hover {
@@ -182,16 +204,60 @@ i {
   justify-content: space-around;
   align-items: normal;
 }
+
+.project-box {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-bottom: 1px solid #1a9cb0;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
 .project {
   max-height: 200px;
   max-width: 28%;
   min-width: 246px;
-  border: 1px solid rgb(158, 137, 120);
+  box-shadow: 0px 0px 4px 4px rgba(227, 228, 229, 0.4);
   margin: 0.5em;
+  transition: all 0.4s ease-out;
+  position: relative;
 }
+
 .project img {
   width: 100%;
 }
+
+.project-link:hover {
+  transform: scale(1.05);
+  transition: all 0.4s ease-out;
+  box-shadow: 0px 0px 4px 4px rgba(29, 65, 89, 0.7);
+}
+
+.project-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  background-color: white;
+  color: rgba(29, 65, 89, 1);
+  margin: 0;
+  text-align: center;
+}
+
+.discription {
+  flex-grow: 1;
+  padding: 0.5em 1em 0 1em;
+  min-width: 250px;
+  width: 50%;
+}
+
+.discription-content {
+  margin: 0 0 1.5em 0;
+}
+
 .summary,
 .language {
   line-height: 25px;
@@ -208,4 +274,17 @@ footer a {
 footer a:hover,
 footer i:hover {
   color: rgb(110, 110, 110);
+}
+
+.border-bottom {
+  border-bottom: 1px solid #1a9cb0;
+}
+
+.max-height img {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
 }
