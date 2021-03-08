@@ -288,3 +288,23 @@ footer i:hover {
   transform: translate(-50%, -50%);
   top: 50%;
 }
+
+.download {
+  position: relative;
+}
+
+.hide-additional {
+  background-color:rgba(29, 65, 89, 0.7);
+  color: white;
+  font-size: 14px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  display: none;
+  padding: 7px;
+}
+
+.download:hover .hide-additional {
+  display: inline-block;
+}
